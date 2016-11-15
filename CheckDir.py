@@ -10,10 +10,10 @@ myPaths=["E:/DVDTemp/",
 "Z:/DVD_Hold2",
 "Z:/DVD_Hold3"]
 
+APath = "Z:/DVD_Hold2"
+
 import os, sys, json, time, errno
 
-for i in myPaths:
-	if os.path.exists( i )
-		print "%s exists!" % ( i )
-	else:
-		print "%s Not Found!" % ( i)
+## for i in myPaths:
+if os.path.exists(Z:/DVD_Hold3)
+	print "exists!"
