@@ -28,6 +28,7 @@ for i in myPaths:
 			# fo.write(i + " " + file + "\n");
 			#print(i + ' : Available' + '\n')
 			#fileFIXED = file.lstrip('DVD_')
+			file = file.replace('DVD_' , '' , 1);
 			fo.write(i);
 			fo.write(',');
 			fo.write(file);
