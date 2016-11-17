@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 
-import os, sys, json, time, errno
+import os, sys, json, time, errno, datetime
 
 myPaths=["E:\\DVDTemp",
 "G:\\DVDTemp",
@@ -21,17 +21,24 @@ fo = open("DVD_Parsed.txt", "w")
 
 for i in myPaths:
 	if os.path.exists(i):
-		# print(i + ' : Available' + '\n')
 		i = i + '\\'
+		CAT = ''
 		dirs = os.listdir( i )
 		for file in dirs:
-			# fo.write(i + " " + file + "\n");
-			#print(i + ' : Available' + '\n')
-			#fileFIXED = file.lstrip('DVD_')
+			#crtime = os.path.getmtime(i);
+			created = str(os.path.getmtime(i));
+			if 'DVD_' in file:
+				TPF = 'DVD';
+			else:
+				TPF = 'NA';
 			file = file.replace('DVD_' , '' , 1);
 			fo.write(i);
 			fo.write(',');
 			fo.write(file);
+			fo.write(',');
+			fo.write(TPF)
+			fo.write(',');
+			fo.write(created);
 			fo.write("\n");
 	else:
 			fo.write(i);
